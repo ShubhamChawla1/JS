@@ -350,11 +350,84 @@ Statement
 functionName();  // Calling a Function 
 
 
+----------Function with Parameters----
+
+function sum(a,b){ // sum is a function name , a,b is a parameters
+document.write(a+b);
+}
+sum(10,20);  // call the function // pass the arguments. arguments as a value / variable bhi ho sakta hai
+
+Eg 2.
+let firstName = prompt("Enter your First name : ");
+let lastName = prompt("Enter your Last name : ");
+function fullName(fname = "Shubham" ,lname="Chawla"){
+document.write("Hello " + fname + " " + lname + "<br>");
+}
+fullName(firstName, lastName); 
+// If you fill firstName and skip lastName default lastName not print because in JavaScript default parameters only work if you don’t pass the argument at all. When you enter only the first name in prompt(), the second prompt() for last name still runs. If you just press OK without typing anything, it doesn’t return undefined → it returns an empty string ("").
+
+----------Functions with Return Value-----
+Syntax : 
+function functionName(parameter1, parameter2){
+    Statements
+    return value/variable
+}
+functionName(argument1,argument2)
+
+Eg.
+
+let firstName = prompt("Enter your First name : ");
+let lastName = prompt("Enter your Last name : ");
+function fullName(fname = "Shubham" ,lname="Chawla"){
+let a = fname + " " + lname;
+return a;
+}
+var fn = fullName(firstName, lastName); //jo bhi value return hui hai usko use krna k liye variable k andar store krna padta hai 
+document.write(fn);
+
+firsName, lastName pass kiya function mai fir a variable -> return a -> function value assign to fn variable-> print fn 
+
+Eg.  2 funciton
+let num1 = Number(prompt("Enter your First Number"));
+let num2 = Number(prompt("Enter your Second Number"));
+let num3 = Number(prompt("Enter your Third Number"));
+
+function sum(math, eng, sci){
+var s = math + eng + sci;
+return s;
+}
+
+function percentage(tt){
+var per = tt/300 * 100;
+return per;
+}
+
+var total = sum(num1,num2,num3);
+document.write("Total " + total + "<br>");
+
+var percent = percentage(total);
+document.write("Percentage : " + percent);
+
+
+------------Global and Local Variable------
 
 
 
+function hello(){
+var a = "ABC";
+document.write(a);
+}
+hello();
+document.write(a); // Error a is not defined
 
--->
+------------------Events-----------
+Mouse Events:
+1) Click 2) Double Click 3) Right Click 4) Mouse Hover 5) Mouse Out 6) Mouse Down 7) Mouse Up 
 
+Keyboard Events : 
+1) Key Press 2) Key Up
+
+Window Events : 
+1) Load 2) Unload 3) Resize 4) Scroll
 
 
