@@ -1,0 +1,360 @@
+<!--  JS Revision 
+JS is Case Sensitive
+ 
+---------------comment----------------
+
+// Single Comment
+/*
+Multi-line Comment
+*/
+
+-------------Variables/Identifier --------------
+A = "Shubham";
+document.write(A); // Output : Shubham
+
+
+Var -> Var A = "Shubham"; // A is a Varaible Name. // Shubham is a value 
+document.write(A); // Output : Shubham
+A = 85; // Overwrite the value
+document.write(A); // Output : 85
+
+var first, second; // declare the variable
+
+first = 50; // assign the value
+second = 100; // assign the value
+
+document.write(first); // document.write only work in html <script></script> tag
+
+var firstname = "ABC";
+var firstname = "DEF";
+
+document.write(firstname);
+
+
+
+Let ->  let can be updated but not re-declared.
+let can be updated within its scope
+let variable cannot be re-declared within its scope
+
+let firstname = "ABC";
+let firstname = "DEF";
+document.write(firstname); // Error variable not re-declared 
+
+let firstname = "ABC";
+firstname = "DEF";
+document.write(firstname); // Value assign  
+
+let can re-declared in different scopes
+let greeting = "say Hi";
+if (true) {
+    let greeting = "say Hello instead";
+    console.log(greeting); // "say Hello instead"
+}
+console.log(greeting); // "say Hi"
+
+const ->  const can be use for constant . constant means value never change
+const cannot be updated or re-declared
+const declarations are block scoped
+
+const first;
+first = "PQRS"; // Error : Const variables must be assigned a value when they are declared 
+
+
+const second = "Hello";
+second = "Bye";
+document.write(second); // Error can't declared and assign value again
+
+var declarations are globally scoped or function scoped while let and const are block scoped.
+var variables can be updated and re-declared within its scope; let variables can be updated but not re-declared; const variables can neither be updated nor re-declared.
+They are all hoisted to the top of their scope. But while var variables are initialized with undefined, let and const variables are not initialized.
+While var and let can be declared without being initialized, const must be initialized during declaration.
+
+--------------Rules of Variable Name---------
+
+1) Start with letters , underscores(_), or dollar Sign($)
+2) Subsequent characters can also be digits (0-9)
+3) letters include the characters A to Z(Uppercase) as well as a to z (lowercase)
+Eg . number_hits, _hints, temp99, $Tree;
+
+--------------------Data Types------------
+ Primitive Data type - 
+ 7 types of Primitive Data type  
+ 1. String  Eg. let x = "Y"; , let a = 'Y'; 
+ 2. Number Eg. let num = 123; let num = 123.33;
+ 3. Bigint  Eg. let num = 99999999999999999999999n; 
+ 4. Boolean   Eg. let num = true; let num = false;
+ 5. Undefined Eg.  let x = undefined; let x; // x value is undefined
+ 6. Null   Eg.  let data = null; console.log(data); // null
+ console.log(typeof data);
+ 7. Symbol : unique and immutable identifier Eg.
+ let sym1 = Symbol("id");
+ let sym2 = Symbol("id");
+ console.log(sym1 === sym2); // false // Even if two symbols have the same description, they are always unique
+
+ // using Symbols as Object Keys
+
+ const id = Symbol("id");
+ let user = {
+ name : "Shubham",
+ [id] : 123 // Symbol as a key
+}
+
+console.log(user.name); // Shubham
+console.log(user[id]); // 123
+
+Non-Primitive Data type 
+1) object  = let x = {
+name : "ABC",  // name is a key , ABC is a value   
+country : "India"
+}
+document.write(typeof x); // [object,object]
+
+x = "34"; 
+document.write(typeof x); // String
+
+But numbers can also be defined as objects with the keyword new: Example : let y = new Number(123); // Object
+2) array  Eg.  let a = ["HTML", "CSS", "Js"]; , document.write(typeof a); // object 
+3) date : let d = new Date();
+
+console.log(d.getFullYear()); // 2025
+console.log(d.getMonth());    // 7 (August, because 0-based)
+console.log(d.getDate());     // 19
+console.log(d.getDay());      // 2 (Tuesday, 0 = Sunday)
+console.log(d.getHours());    // current hour
+console.log(d.getMinutes());  // current minute
+console.log(d.getSeconds());  // current second
+console.log(d.getTime());
+
+
+------------Types of JavaScript Operators------
+1) Arithmetic Operators
+            1) + -> Addition 
+            2) - -> Substraction
+            3) * -> Multiplication
+            4) ** -> Exponentiation (Power)
+            5) /  -> Division
+            6) %  -> Modulus(Remainder)
+            7) ++ -> Increment
+            8) -- -> Decrement 
+            Eg.  var a = 10;
+                 var b = 3;
+                 var c = a + b * 2;
+                 var d = (a + b) * 2;
+                 document.write(c); // 16
+                 document.write(d); // 26
+            
+Note : If you add a number and a string, the result will be a string!
+
+2) Assignment Operators
+             operator   Example     Same As
+            1) = ->       x = y       y=x  
+            2) += ->      x +=y       x = x + y  
+            3) -= ->      x -=y       x = x - y
+            4) *= ->      x *=y       x = x * y
+            5) /= ->      x /=y       x = x / y
+            6) %= ->      x %=y       x = x % y
+            7) **= ->      x **= y       x = x ** y
+            Eg. var a = 10;
+                 var b = 3;
+                 var a = a + b;
+                 document.write(a); // 13 
+
+3) Comparison Operators
+              operator       Description
+            1) ==     ->        equal to 
+            2) ===    ->        equal value and equal type
+            3) !=     ->        not equal
+            4) !==    ->        not equal value or not equal type
+            5) >      ->        greater than
+            6) <      ->        less than
+            7) >=     ->        greater than or equal to
+            8) <=     ->        less than or equal to
+            Eg. let a = 10; 
+                let b = "10";
+                console.log(a==b); // True
+                console.log(a===b); // False
+                console.log(null == undefined); // true
+                console.log(null === undefined); // false
+
+4) String Operators
+
+5) Logical Operators 
+          Operator     Name
+    1)     &&      Logical AND    Both Condition True return True , one condition true and second false return false
+    2)     ||      Logical OR     Only one condition is true return true, both condition is false return false 
+    3)     !       Logical NOT    if condition is true return false. if condition is false return true
+
+6) Bitwise Operators
+
+7) Ternary Operators same like if else statement. Multiple Statement not work
+
+Syntax : (condition) ? True Statement : False Statement
+Eg. 
+var x = 15;
+var z;
+(x>10) ? z="True" : z="False" // 2way -> z= (x>10) ? "True" : "False" // 3rd way -> z = "value is " + (a==10 ? "True" : "False");
+document.write(z);
+
+ document.write("<br>"); // for break line in js
+---------------Google Console----------
+console.log([1,2,3]);  // print like 0:1  // 0 is index , 1 value
+                                     1:2
+                                     2:3   
+console.table([1,2,3]);  // print like in table
+
+console.error("Create Demo Error"); //  Create error with the help of Console
+
+console.warn("Create Demo Warn"); // Create Warning with the help of Console
+
+console.clear(); // Clear the Console
+
+console.time("Test"); // This command is used to check which command take how much time
+console.log("A");
+console.log("A");
+console.log("A");
+console.log("A");
+console.log("A");
+console.timeEnd("Test"); 
+
+console k editor mei bhi Javascript ki command run kr sakta hai
+
+document.write("Hello World"); // print on Screen
+
+document  // presee Enter Full HTML Document Show
+
+
+------------------Control Flow and Error handling--------
+1) if Statement -> if condition true curely braces statement execute.
+let x = 5;
+if(x>2){
+document.write("5 is greater than 2");
+}
+2) if else statement -> if condition true curely braces statement execute if condition false else statement execute 
+Eg.
+let a = 5;
+if(a>2){
+document.write("a is greater than 2");
+}
+else{
+docuemnt.write("a is smaller than 2");
+}
+
+3) if else if statement 
+Eg.
+let time = 9;
+if(time < 10){
+document.write("Good Morning");
+}
+else if(time >= 10 && time <= 16){
+document.write("Good Afternoon");
+}
+
+else if(time >16 && time <= 20){
+document.write("Good Evening");
+}
+else{
+docuement.write("Good Night")
+}
+
+4) Switch Statement
+let day = 1;
+switch(day){
+case 0: 
+document.write("Sunday");
+break;
+case 1: 
+document.write("Monday");
+break;
+case 2: 
+document.write("Tuesday");
+break;
+case 3: 
+document.write("Wednesday");
+break;
+case 4: 
+document.write("Thursday");
+break;
+case 5: 
+document.write("Friday");
+break;
+case 6: 
+document.write("Satursday");
+break;
+default: 
+document.write("Invalid day");
+
+} 
+
+Eg 2  
+let age = 44;
+
+switch (true) {
+    case (age <= 0):
+        document.write("Invalid Number");
+        break;
+    case (age >= 18 && age <= 60):
+        document.write("You are Eligible to drive");
+        break;
+    case (age < 18 || age > 60):
+        document.write("You are not Eligible to drive");
+        break;
+    default:
+        document.write("Invalid Input");
+}
+
+
+
+--------------Alert Box----------
+alert("Hello Everybody");
+
+let a1 = 10;
+let b1 = 20;
+if(a1<b1){
+alert("b is greater than a" + " " + b1 + " " + a1);
+}
+else{
+alert("b is smaller than a");
+}
+
+-------------Confirm Box-----------
+
+var a3 = confirm("Do you like our Write ?");
+
+alert(a3); // give you two option ok means true cancel means false
+
+if(a3){
+alert("Thanks");
+}else{
+alert("Sorry");
+}
+
+-----------------Prompt Box------------
+----Get value from your user----
+
+var s = prompt("What is your name");
+
+alert(s);
+document.write("<br>");
+document.write(s);
+
+
+
+
+
+--------------Functions----------
+Function Syntax:
+Function functionName(){  // Function Definition
+Statement
+}
+
+functionName();  // Calling a Function 
+
+
+
+
+
+
+-->
+
+
+
