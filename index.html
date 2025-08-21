@@ -422,12 +422,89 @@ document.write(a); // Error a is not defined
 
 ------------------Events-----------
 Mouse Events:
-1) Click 2) Double Click 3) Right Click 4) Mouse Hover 5) Mouse Out 6) Mouse Down 7) Mouse Up 
+1) Click(onclick) 2) Double Click(ondblclick) 3) Right Click(oncontextmenu) 4) Mouse Hover(onmouseenter) 5) Mouse Out(onmouseout) 6) Mouse Down(onmousedown) 7) Mouse Up(onmouseup) 
 
 Keyboard Events : 
-1) Key Press 2) Key Up
+1) Key Press(onkeypress) work only in form or body tag 2) Key Up(onkeyup)
 
-Window Events : 
-1) Load 2) Unload 3) Resize 4) Scroll
+Window Events : work in body tag only
+1) Load(onload) 2) Unload(onunload) 3) Resize(onresize) 4) Scroll(onscroll)
+
+Eg. <body onscroll="hello()">
+    <button onclick="hello()">Press the Button</button>
+    <button ondblclick="hello()">double click</button>
+    <button oncontextmenu="hello()">Right Click</button>
+    <button onmouseenter="hello()">Mouse Hover</button>
+    <button onmouseout="hello()">Mouse Out</button>
+    <button onmousedown="hello()">Mouse down</button>
+    <button onmouseup="hello()">Mouse Up</button>
+    <button onkeypress="hello()">Key Press</button>
+    <button onkeyup="hello()">Key Up</button>
+    <button onload="hello()">Load</button>
+    <button onunload="hello()">Unload</button>
+    <button onresize="hello()">Resize</button>
+    <button >Scroll</button>
+    <p>Lorem1000</p> //Lorem1000 Enter
+    <script>
+    function hello(){
+    var a = "ABC";
+    alert(a);
+    }
+    </script>
+
+    -------------Loop----------------
+    Types of Loops
+    1) while loop
+    2) do/while loop
+    3) for loop 
+    4) for/in loop(Objects)
+    5) forEach(Array)
+
+    While loop
+    var a = 1;
+    document.write("<ul>");
+    while(a<=10){
+    document.write("<li> Hello World </li>" + "<br> ");
+    a += 1;
+    }
+    document.write("</ul>");
+
+    2) Do/while loop - atleast run at once
+    var a = 1;
+    document.write("<ul>");
+    do{
+       document.write(" <li>"  + a + ")   Hello World" + "</li>");
+       a += 1;
+    }
+    while(a<=10)
+    document.write("</ul>");
+
+    3) For Loop 
+
+    for(let a = 1; a<=10; a++){
+        document.write("Hello World <br>");
+    }
+
+
+    ---------Break and Continue Statement----
+    
+    for(let a = 1; a<=10; a++){
+    if(a==3){
+    document.write("Hey" + a + "<br>");
+    continue; // break;Number 1 , Number 2 , Hey 3 print // 
+    }
+    document.write("Number : " + a + "<br>");
+}
+-------------Even/odd Number with Loop
+
+    let num = prompt("check the Number is Even/odd");
+    for(let i = 1; i<=num; i++){
+        if(i%2==0){ // i%2!=0 give odd number
+            document.write( i + " is a Even Number <Br>" );
+        }
+    }
+
+------------Nested Loop-----------    
+-->
 
 

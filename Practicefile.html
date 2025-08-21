@@ -5,16 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
-    <script>
-function hello(){
-var a = "ABC";
-document.write(a);
-}
-hello();
-
-<button></button>
-
+<script>
+    let num = prompt("check the Number is Even/odd");
+    for(let i = 1; i<=num; i++){
+        if(i%2==0){ // i%2!=0 give odd number
+            document.write( i + " is a Even Number <Br>" );
+        }
+    }
 </script>
 </body>
 </html>
