@@ -504,7 +504,60 @@ Eg. <body onscroll="hello()">
         }
     }
 
-------------Nested Loop-----------    
+------------Nested Loop-----------
+Loop inside loop is called nested loop
+
+Eg.
+  for(let a = 1; a <=100; a = a+10)
+   {
+   for(let b = a; b<a+10; b++)
+   {
+    document.write(b + " ");
+   }
+   document.write("<br>");
+   }
+
+Eg.2 
+
+   for(let a = 1; a <=5; a++)
+   {
+   for(let b = 1; b <=a; b++)
+   {
+   document.write(b + " ");
+   }
+   document.write("<br>");
+   }
+
+Eg.3
+
+for(let a = 1; a<= 5; a++){
+    for(let b = 1; b<=a; b++){
+        document.write(a + " ");
+    }
+    document.write("<br>");
+  }
+
+Eg. 4 
+ for(let a = 5; a>=1; a--){
+    for(let b = 1; b<=a; b++)
+ {
+    document.write(a + " ");
+ }
+ document.write("<br>");
+ }
+ 
+Eg. 5 
+ for(let a = 5; a>=1; a--){
+    for(let b = a; b>=1; b--)
+ {
+    document.write(b + " ");
+ }
+ document.write("<br>");
+ }
+
+ -------------JavaScript Arrays------------ 
+
+ let a = [10,20,30];
 
 
 -->
