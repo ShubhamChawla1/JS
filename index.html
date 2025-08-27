@@ -557,10 +557,256 @@ Eg. 5
 
  -------------JavaScript Arrays------------ 
 
- let a = [10,20,30];
+  let arr = [10,20,30,40,50];
 
+ document.write(arr); 
+document.write("<br>");
+ document.write(arr[2]); // 30
+ document.write("<br>");
+  document.write(arr[5]); // undefined  
+ document.write("<br>");
+ let sum = 0;
+  for(let i = 0; i<arr.length; i++){
+   document.write(arr[i]);
+   document.write("<br>");
+   sum = sum + arr[i];
+  }document.write("Sum : " + sum);
+
+------------   
+let arr2 = new Array(); 
+
+ arr2[0] = 10;
+ arr2[1] = "Harry";
+ arr2[2] = 50;
+ arr2[3] = true;
+ arr2[4] = "a";
+ arr2[5] = 90;
+
+ for(let i = 0; i < arr2.length; i++){
+// document.write(arr2[i]);
+// document.write("<br>");
+ }
+--------------
+ let arr3 = new Array(3); // in Array now i put only 4 value
+ arr3[0] = 10;
+ arr3[1] = "Harry";
+ arr3[2] = 50;
+ arr3[3] = true;
+ arr3[4] = "a";
+ arr3[5] = 90;
+ for(let i = 0; i < arr3.length; i++){
+ document.write(arr3[i]);
+ document.write("<br>");
+//  But i put value more than 3 because array are dynamic in js 
+}
+
+// How to get value from user
+let arr4 = new Array(3);
+for(let i = 0; i<arr4.length; i++){
+   arr4[i] = prompt("Enter the Value : " );
+}
+document.write("<br/>");
+
+// print the Array value
+for(let j = 0; j<arr4.length; j++)
+{
+document.write(arr4[j]);
+document.write("<br/>");
+}
  
 
+---------------Multidimensional Array------------
+
+let arrM = [
+        ["Harry", 18, "Male", "B.com"],
+        ["Rahul", 25, "Male", "M.com"],
+        ["Sonia", 22, "Female", "BBA"],
+        ["Rahul", 21, "Male", "BCA"]
+];
+for(let i =0; i< arrM.length; i++)
+{
+   for(let j =0; j<arrM.length; j++){
+
+   
+document.write(arrM[i][j] + " ");
+   }
+   document.write("<br>");
+   
+
+}
+document.write("<br>");
+document.write(arrM[0][0]);
+
+----In Table Format---
+document.write("<table border=1px;>");
+for(let i =0; i< arrM.length; i++)
+{
+ document.write("<tr>");
+   for(let j =0; j<arrM.length; j++){
+
+   
+document.write("<td>" + arrM[i][j] + " " + "</td>");
+   }
+   document.write("<br>");
+}
+document.write("</tr>");
+document.write("</table>");
+
+
+-------Modify and Delete Array Elements----
+let a = ["Harry", 18, "Male", "BCA"];
+      document.write(a);
+      document.write("<br>");
+      a[0] = "Sunny";
+      document.write(a);
+      delete a[2];
+      document.write("<br>");
+      document.write(a);
+
+--------------Array Methods-------------
+/*Js Array Methods*/ 
+      // Sort() Function 
+      /*
+      let a = ["Sanjay", "Aman", "Rehman", "Karan"];
+      document.write(a + "<br>");
+      a.sort();
+      document.write(a + "<br>");
+       */
+      // Reverse
+      let a = ["Sanjay", "Aman", "Rehman", "Karan"];
+      document.write(a + "<br>");
+      a.reverse();
+      document.write(a + "<br>");  
+      
+     
+      // pop() Function -> last element delete
+      /*
+      let a = ["Sanjay", "Aman", "Rehman", "Karan"];
+      document.write(a + "<br>");
+      a.pop();
+      document.write(a + "<br>");
+       */
+      // Push() Function -> Add element in last
+      let a = ["Sanjay", "Aman", "Rehman", "Karan"];
+      document.write(a + "<br>");
+      a.push("Rohit");
+      document.write(a + "<br>");
+
+      // shift() Function -> first element delete
+      
+      // let a = ["Sanjay", "Aman", "Rehman", "Karan"];
+      // document.write(a + "<br>");
+      // a.shift();
+      // document.write(a + "<br>");
+       
+      // unshift() Function -> Add element in first 
+      let a = ["Sanjay", "Aman", "Rehman", "Karan"];
+      document.write(a + "<br>");
+      a.unshift("Rohit");
+      document.write(a + "<br>");
+
+      // concat() Function -> add the element in one array
+      
+         // let a = ["Sanjay", "Aman", "Rehman", "Karan"];
+         // let b = a.concat("Abhishek", "Amit"); // 1st way
+         // let b = ["Abhishek", "Amit"];
+         // let d = ["Abhi", "Mohit"];     
+         // let c = a.concat(b,d);
+         // document.write(c + "<br>");
+       
+         // Join() Function -> Add all array value and make them string 
+            let a = ["Sanjay", "Aman", "Rehman", "Karan"];
+            document.write(a + "<br>");
+            let b = a.join("-");
+            document.write(b + "<br>");
+
+
+            
+      // Slice Function -> array mai se value pick krna 
+
+      let a = ["Sanjay", "Aman", "Rehman", "Karan"];
+
+      document.write(a + "<br>");
+
+      let b = a.slice(1,3);
+      document.write(b + "<br>");
+      let c = a.slice(-2);
+      document.write(c + "<br>");
+
+      // Splice () Function : Add Element in middle of existing array and delete 
+
+      let d = ["Sanjay", "Aman", "Rehman", "Karan"];
+
+      // Syntax : splice(index, how many Delete, "new value")
+      document.write(d + "<br>");
+
+      d.splice(2,0,"Neha", "Sohit");
+      
+      document.write(d + "<br>");
+
+      d.splice(2,2,"Mohit","Rohit");
+      
+      document.write(d + "<br>");
+
+      d.splice(-2,1,"Parul","Piyush");
+      
+      document.write(d + "<br>");
+
+      d.splice(2,2);
+
+      document.write(d + "<br>");
+
+      
+      // isArray() Function : Check variable is array or not. output in true/false
+
+      let a = ["sanjay", "Aman", "Rehman"];
+      
+      let b = Array.isArray(a);
+      document.write(b + "<br>");
+      
+      let c = 20;
+      let d = Array.isArray(c);
+      document.write(d + "<br>");
+      
+      
+      let e = "Rahul";
+      let f = Array.isArray(e);
+      document.write(f + "<br>");
+      if( f == true){ // Array.isArray(e) // aasa bhi use kr sakta hai
+       document.write("This is an Array" + "<br>");
+      }
+      else{
+        document.write("This is not an Array" + "<br>");
+      }
+
+      // indexOf() Function : Check in array element existing and what is index of element
+
+      let a = ["sanjay", "Aman", "Rehman" , "Rohit", "Sohit", "Piyush" , "Aman", "Mohit"];
+      
+    //   let b = a.indexOf("Aman");
+    //   document.write(b + "<br>"); 
+      
+    //   let c = a.indexOf("Aman", 4);
+    //   document.write(c + "<br>"); 
+
+    //   let d = a.indexOf("Neha", 1);
+    //   document.write(d + "<br>"); // -1
+
+    // lastIndexOf() Function : Search from last index 
+
+        let b = ["sanjay", "Aman", "Rehman" , "Rohit", "Sohit", "Piyush" , "Aman", "Mohit"];
+
+        // Syntax : lastIndexOf("Search Item", Start);
+
+        let c = b.lastIndexOf("Aman");
+        document.write(c  + "<br>");
+
+        let d = b.lastIndexOf("Aman", 3);
+        document.write(d + "<br>"); 
+        
+        let e = b.lastIndexOf("Amaaaan", 3);
+        document.write(e); 
+            
 
 -->
 
